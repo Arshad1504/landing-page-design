@@ -1,7 +1,7 @@
-import './DealsCarousel.css';
-import PropTypes from 'prop-types';
+import "./DealsCarousel.css";
+import PropTypes from "prop-types";
 
-const DealsCarousel = ({title,discount,data}) => {
+const DealsCarousel = ({ title, discount, data }) => {
   console.log(data);
 
   if (!data || data.length === 0) {
@@ -9,11 +9,11 @@ const DealsCarousel = ({title,discount,data}) => {
   }
 
   const scrollLeft = () => {
-    document.getElementById('carousel').scrollLeft -= 280;
+    document.getElementById("carousel").scrollLeft -= 280;
   };
 
   const scrollRight = () => {
-    document.getElementById('carousel').scrollLeft += 280;
+    document.getElementById("carousel").scrollLeft += 280;
   };
 
   return (
@@ -23,13 +23,12 @@ const DealsCarousel = ({title,discount,data}) => {
         <h1>Flat {discount}% Off</h1>
         <button className="view-all">View all</button>
       </div>
-      
+
       <div className="carousel-container">
         <button className="nav-button prev" onClick={scrollLeft}>
           ‹
         </button>
-        
-        
+
         <div className="carousel" id="carousel">
           {data.map((category) => (
             <div key={category.id} className="category-card">
@@ -43,25 +42,13 @@ const DealsCarousel = ({title,discount,data}) => {
             </div>
           ))}
         </div>
-        
+
         <button className="nav-button next" onClick={scrollRight}>
           ›
         </button>
       </div>
     </div>
   );
-};
-DealsCarousel.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      title: PropTypes.string.isRequired,
-      price: PropTypes.string.isRequired,
-      image: PropTypes.string.isRequired,
-    })
-  ),
-  title: PropTypes.string,
-  discount: PropTypes.string,
 };
 
 export default DealsCarousel;

@@ -81,7 +81,6 @@ const Footer = () => {
               </div>
               <div className="footer_company_info">
                 <p>+91 6205594943</p>
-                <p>https://vishalkumar07.me</p>
               </div>
             </div>
           </div>

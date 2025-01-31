@@ -1,11 +1,15 @@
-import './ProductCategoryCard.css';
-import PropTypes from 'prop-types';
+import "./ProductCategoryCard.css";
+import PropTypes from "prop-types";
 
-const ProductCategoryCard = ({ProductCardImage='', bgColor='white',title='Shop for kids (Him)'}) => {
+const ProductCategoryCard = ({
+  ProductCardImage = "",
+  bgColor = "white",
+  title = "Shop for kids (Him)",
+}) => {
   return (
-    <div className="category-card" style={{backgroundColor:bgColor}}>
+    <div className="category-card" style={{ backgroundColor: bgColor }}>
       <div className="image-container">
-        <img 
+        <img
           src={ProductCardImage}
           alt="Young boy in winter jacket"
           className="category-image"
@@ -16,11 +20,6 @@ const ProductCategoryCard = ({ProductCardImage='', bgColor='white',title='Shop f
       </div>
     </div>
   );
-};
-ProductCategoryCard.propTypes = {
-  bgColor: PropTypes.string,
-  title: PropTypes.string,
-  ProductCardImage: PropTypes.string,
 };
 
 export default ProductCategoryCard;
